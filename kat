@@ -1,0 +1,94 @@
+if game.CoreGui:FindFirstChild("FinityUI") then
+    game.CoreGui["FinityUI"]:Destroy()
+end
+
+local Finity = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/UI-Librarys/main/Finity%20UI%20Lib"))()
+
+local FinityWindow = Finity.new(true)
+FinityWindow.ChangeToggleKey(Enum.KeyCode.RightShift)
+
+local CreditsCategory = FinityWindow:Category("Credits")
+local MainCategory = FinityWindow:Category("Main")
+local MiscCategory = FinityWindow:Category("Misc")
+
+local MainCredits = CreditsCategory:Sector("Credits")
+local Aimbot = MainCategory:Sector("Aimbot")
+local AutoFarm = MainCategory:Sector("AutoFarm")
+local Player = MainCategory:Sector("Player")
+local MainMisc = MiscCategory:Sector("Main")
+
+MainCredits:Cheat("Dropdown", "Script Credits", function(Option)
+end, {
+    options = {
+        "Glock",
+        "Finity UI Lib"
+    }
+})
+
+Aimbot:Cheat(
+    "Checkbox", 
+    "Silent Aimbot", 
+    function(State) 
+        if State == true then
+            loadstring(game:HttpGet('https://pastebin.com/raw/ZjM9Vv3X'))()
+        elseVisualsESPSettings:Cheat("Dropdown", "ESP Color", function(Option)
+    print("Dropdown option changed:", Option)
+end, {
+    options = {
+        "Red",
+        "White",
+        "Green",
+        "Pink",
+        "Blue"
+    }
+})
+            loadstring(game:HttpGet('https://pastebin.com/raw/kPszanXV'))()
+        end
+    end
+)
+
+AutoFarm:Cheat(
+    "Checkbox", 
+    "Enable", 
+    function(State) 
+        if State == true then
+            loadstring(game:HttpGet('https://pastebin.com/raw/gyMnNjrg'))()
+        else
+            loadstring(game:HttpGet('https://pastebin.com/raw/XHzz5fke'))()
+        end
+    end
+)
+
+Player:Cheat(
+    "Checkbox", 
+    "Godmode", 
+    function(State) 
+        if State == true then
+            loadstring(game:HttpGet("https://pastebin.com/raw/yd64ZJpD", true))();
+        else
+            loadstring(game:HttpGet("https://pastebin.com/raw/yd64ZJpD", false))();
+        end
+    end
+)
+
+MainMisc:Cheat(
+    "Checkbox", 
+    "Chat Spam", 
+    function(State) 
+        if State == true then
+            loadstring(game:HttpGet('https://pastebin.com/raw/tq0jx3z5'))()
+        else
+            loadstring(game:HttpGet('https://pastebin.com/raw/7suEiVS0'))()
+        end
+    end
+)
+
+MainMisc:Cheat("Button", "ServerHop", function()
+    local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+        module:Teleport(game.PlaceId)
+end)
+
+MainMisc:Cheat("Button", "Lowest Ping Server", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/y7tvcNM6"))()
+end)
